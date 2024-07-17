@@ -169,7 +169,7 @@ void MoveNet::detect_pose(cv::Mat &bgr, std::vector<keypoint> &points)
         keypoint kpt;
         kpt.x = x * target_size;
         kpt.y = y * target_size;
-        kpt.score = heatmap_data[(int)(i * feature_size * feature_size + y_regress[i] * feature_size + x_regress[i])];
+        kpt.score = heatmap_data[(int)(i * feature_size * feature_size + kpts_ys[i] * feature_size + kpts_xs[i])];
         points.push_back(kpt);
     }
 }
